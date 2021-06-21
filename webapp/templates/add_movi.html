@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2 style="color:white;">Add your movie.</h2><br>
+
+<h3>
+<div class="container">
+    <div class="row">
+        <div class="col"><label style="color:white;">Name of movie         :</label></div>
+        <div class="col"><input type="text" name="name"><br></div>
+    </div>
+    <div class="row">
+         <div class="col"><label style="color:white;">Movie of description :</label></div>
+         <div class="col"><input type="text" name="desc"><br></div>
+    </div>
+    <div class="row">
+        <div class="col"><label style="color:white;">Year of movie         :</label></div>
+        <div class="col"> <input type="number" name="year"><br></div>
+    </div>
+    <div class="row">
+        <div class="col"> <label style="color:white;">poster               :</label></div>
+        <div class="col"><input type="file" name="image"></div>
+    </div>
+</h3>    <br>
+    <div class="row">
+        <div class="col"></div>
+             <div class="col">
+            <button type="submit" class="btn btn-warning">Add to list</button>
+
+            <a href="{% url 'movieapp:index' %}" class="btn btn-primary">home</a>
+        </div>
+    </div>
+</div>
+
+</form>
+
+{% endblock %}
